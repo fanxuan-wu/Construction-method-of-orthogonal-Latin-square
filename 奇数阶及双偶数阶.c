@@ -1,9 +1,9 @@
 #define  _CRT_SECURE_NO_WARNINGS 1
-#include"Õı½»À­¶¡·½.h"
+#include"æ­£äº¤æ‹‰ä¸æ–¹.h"
 
-int OLs4(int* A1[4][4], int* A2[4][4]) {//Êä³ö4½×Õı½»À­¶¡·½×é
+int OLs4(int* A1[4][4], int* A2[4][4]) {//è¾“å‡º4é˜¶æ­£äº¤æ‹‰ä¸æ–¹ç»„
 	int i, j;
-	printf("4½×»¥ÎªÕı½»µÄÀ­¶¡·½A1ÈçÏÂ£º\n");
+	printf("4é˜¶äº’ä¸ºæ­£äº¤çš„æ‹‰ä¸æ–¹A1å¦‚ä¸‹ï¼š\n");
 	for (i = 0; i < 4; i++) {
 		for (j = 0; j < 4; j++) {
 			if (j == 0) printf(" | ");
@@ -11,7 +11,7 @@ int OLs4(int* A1[4][4], int* A2[4][4]) {//Êä³ö4½×Õı½»À­¶¡·½×é
 			if (j == 3) printf("| \n");
 		}
 	}
-	printf("4½×»¥ÎªÕı½»µÄÀ­¶¡·½A2ÈçÏÂ£º\n");
+	printf("4é˜¶äº’ä¸ºæ­£äº¤çš„æ‹‰ä¸æ–¹A2å¦‚ä¸‹ï¼š\n");
 	for (i = 0; i < 4; i++) {
 		for (j = 0; j < 4; j++) {
 			if (j == 0) printf(" | ");
@@ -21,7 +21,7 @@ int OLs4(int* A1[4][4], int* A2[4][4]) {//Êä³ö4½×Õı½»À­¶¡·½×é
 	}
 }
 int OLsOdd(int* A1[][N], int* A2[][N], int* n){
-	printf("%d½×»¥ÎªÕı½»µÄÀ­¶¡·½A1ÈçÏÂ£º\n",*n);
+	printf("%dé˜¶äº’ä¸ºæ­£äº¤çš„æ‹‰ä¸æ–¹A1å¦‚ä¸‹ï¼š\n",*n);
 	int i = 0, j = 0;
 	for (i = 0; i < *n; i++) {
 		for (j = 0; j < *n; j++) {
@@ -36,7 +36,7 @@ int OLsOdd(int* A1[][N], int* A2[][N], int* n){
 		}
 	}
 	printf("\n");
-	printf("%d½×»¥ÎªÕı½»µÄÀ­¶¡·½A2ÈçÏÂ£º\n",*n);
+	printf("%dé˜¶äº’ä¸ºæ­£äº¤çš„æ‹‰ä¸æ–¹A2å¦‚ä¸‹ï¼š\n",*n);
 	for (i = 0; i < *n; i++) {
 		for (j = 0; j < *n; j++) {
 			A2[i][j] = (2 * i + j) % *n;
@@ -50,47 +50,47 @@ int OLsOdd(int* A1[][N], int* A2[][N], int* n){
 		}
 	}
 }
-int Pnd(int* n, int* p) {//¶ş´ÎÅĞ¶¨²¢·Ö½ân£»
+int Pnd(int* n, int* p) {//äºŒæ¬¡åˆ¤å®šå¹¶åˆ†è§£nï¼›
 	{
 		int i, a;
 		a = *n;
 		for (i = 0;; i++) {
-			if (a == 1) {//µ±n´æÔÚÖ»´æÔÚÖÊÊıÒòÊı2Ê±·µ»Ø1
+			if (a == 1) {//å½“nå­˜åœ¨åªå­˜åœ¨è´¨æ•°å› æ•°2æ—¶è¿”å›1
 				printf("%d = 2^%d\n", *n, *p);
 				return 1;
 			}
-			else if (a % 2 == 0) {//ÅĞ¶¨´æÔÚ¼¸¸öÒòÊı2
+			else if (a % 2 == 0) {//åˆ¤å®šå­˜åœ¨å‡ ä¸ªå› æ•°2
 				a = a / 2;
 				*p = *p + 1;
 			}
-			else if (*p != 1) {//µ±n²»Ö»´æÔÚÒ»¸öÒòÊı2£¬ÒÔ¼°Ò»¸öÆæÊıÊ±·µ»Ø2
+			else if (*p != 1) {//å½“nä¸åªå­˜åœ¨ä¸€ä¸ªå› æ•°2ï¼Œä»¥åŠä¸€ä¸ªå¥‡æ•°æ—¶è¿”å›2
 				printf("%d = 2^%d * %d\n", *n, *p, a);
 				return 2;
 			}
-			else if (*p == 1) {//µ±n´æÔÚ1¸öÒòÊı2£¬ÒÔ¼°Ò»¸öÆæÊıÊ±·µ»Ø0
-				printf("ÓÉÓÚ%dÖĞ´æÔÚÒ»¸öÒòÊı2\n", *n);
-				printf("ËäÈ»ÀíÂÛÉÏ´æÔÚ%d½×µÄÕı½»À­¶¡·½\n", *n);
-				printf("µ«ºÜ±§Ç¸,²¢²»ÄÜÍ¨¹ı´Ë³ÌĞò¹¹Ôì³ö%d½×Õı½»À­¶¡·½\n", *n);
+			else if (*p == 1) {//å½“nå­˜åœ¨1ä¸ªå› æ•°2ï¼Œä»¥åŠä¸€ä¸ªå¥‡æ•°æ—¶è¿”å›0
+				printf("ç”±äº%dä¸­å­˜åœ¨ä¸€ä¸ªå› æ•°2\n", *n);
+				printf("è™½ç„¶ç†è®ºä¸Šå­˜åœ¨%dé˜¶çš„æ­£äº¤æ‹‰ä¸æ–¹\n", *n);
+				printf("ä½†å¾ˆæŠ±æ­‰,å¹¶ä¸èƒ½é€šè¿‡æ­¤ç¨‹åºæ„é€ å‡º%dé˜¶æ­£äº¤æ‹‰ä¸æ–¹\n", *n);
 				return 0;
 			}
 		}
 	}
 }
 
-int init(int* A[][4], int* B[][4], int* A1[][N], int* A2[][N]) {//¶ÔA1¡¢A2½øĞĞ³õÊ¼»¯
+int init(int* A[][4], int* B[][4], int* A1[][N], int* A2[][N]) {//å¯¹A1ã€A2è¿›è¡Œåˆå§‹åŒ–
 	int i, j;
-	for (i = 0; i < 4; i++) {//½«A¸³Öµ¸øA1
+	for (i = 0; i < 4; i++) {//å°†Aèµ‹å€¼ç»™A1
 		for (j = 0; j < 4; j++)
 			A1[i][j] = A[i][j];
 	}
-	for (i = 0; i < 4; i++) {//½«B¸³Öµ¸øA2
+	for (i = 0; i < 4; i++) {//å°†Bèµ‹å€¼ç»™A2
 		for (j = 0; j < 4; j++)
 			A2[i][j] = B[i][j];
 	}
 }
 int copy_array(int source1[][N], int source2[][N], int destination1[][N], int destination2[][N], int m) {
 	int i, j;
-	{//¹¹Ôì2m½×Õı½»À­¶¡·½destination1
+	{//æ„é€ 2mé˜¶æ­£äº¤æ‹‰ä¸æ–¹destination1
 		for (i = 0; i < m; i++) {
 			for (j = 0; j < m; j++) destination1[i][j] = source1[i][j];
 			for (j = m; j < 2 * m; j++) destination1[i][j] = source1[i][j - m] + m;
@@ -100,7 +100,7 @@ int copy_array(int source1[][N], int source2[][N], int destination1[][N], int de
 			for (j = m; j < 2 * m; j++) destination1[i][j] = source1[i - m][j - m];
 		}
 	}
-	{//¹¹ÔìÕı½»À­¶¡·½destination2
+	{//æ„é€ æ­£äº¤æ‹‰ä¸æ–¹destination2
 		for (i = 0; i < m / 2; i++) {
 			for (j = 0; j < m; j++) destination2[i][j] = source2[i][j];
 			for (j = m; j < 2 * m; j++) destination2[i][j] = source2[i][j - m] + m;
@@ -119,12 +119,12 @@ int copy_array(int source1[][N], int source2[][N], int destination1[][N], int de
 		}
 	}
 }
-int OLs4doub(int* A1[N][N], int* A2[N][N], int* A3[N][N], int* A4[N][N], int p) {//4µÄ±¶Êı½×Õı½»À­¶¡·½µÄ¹¹½¨
+int OLs4doub(int* A1[N][N], int* A2[N][N], int* A3[N][N], int* A4[N][N], int p) {//4çš„å€æ•°é˜¶æ­£äº¤æ‹‰ä¸æ–¹çš„æ„å»º
 	int a, i, j, m;
-	for (i = 0; i < p; i++) {//Ò»¹²ĞèÒª¹¹Ôìp´Î
-		m = 4 * (int)pow(2, i);;//´Ó4½×¿ªÊ¼¹¹Ôì8½×£¬Ö±µ½ËùÒªÇóµÄ½×Êı
-		copy_array(A1, A2, A3, A4, m);//°ÑÁ½¸öm½×Õı½»À­¶¡·½A1£¬A2¹¹Ôì³ÉA3£¬A4
-		for (a = 0; a < 2 * m; a++) {//ÖØĞÂ°ÑĞÂ¹¹³ÉµÄA3£¬A4¸³Öµµ½A1£¬A2£¬·½±ã¼ÌĞø¹¹Ôì
+	for (i = 0; i < p; i++) {//ä¸€å…±éœ€è¦æ„é€ pæ¬¡
+		m = 4 * (int)pow(2, i);;//ä»4é˜¶å¼€å§‹æ„é€ 8é˜¶ï¼Œç›´åˆ°æ‰€è¦æ±‚çš„é˜¶æ•°
+		copy_array(A1, A2, A3, A4, m);//æŠŠä¸¤ä¸ªmé˜¶æ­£äº¤æ‹‰ä¸æ–¹A1ï¼ŒA2æ„é€ æˆA3ï¼ŒA4
+		for (a = 0; a < 2 * m; a++) {//é‡æ–°æŠŠæ–°æ„æˆçš„A3ï¼ŒA4èµ‹å€¼åˆ°A1ï¼ŒA2ï¼Œæ–¹ä¾¿ç»§ç»­æ„é€ 
 			for (j = 0; j < 2 * m; j++)
 				A1[a][j] = A3[a][j];
 		}
@@ -133,12 +133,12 @@ int OLs4doub(int* A1[N][N], int* A2[N][N], int* A3[N][N], int* A4[N][N], int p) 
 				A2[a][j] = A4[a][j];
 		}
 	}
-	copy(A1, A2, m);//Êä³öA1¡¢A2
+	copy(A1, A2, m);//è¾“å‡ºA1ã€A2
 }
 int copy(int* A1[][N], int* A2[][N], int m){
 	int i, j;
 	printf("\n");
-	for (i = 0; i < 2 * m; i++) {//Êä³öA1
+	for (i = 0; i < 2 * m; i++) {//è¾“å‡ºA1
 		for (j = 0; j < 2 * m; j++) {
 			if (j == 0) printf(" | ");
 			printf("%2d ", A1[i][j]);
@@ -146,7 +146,7 @@ int copy(int* A1[][N], int* A2[][N], int m){
 		}
 	}
 	printf("\n");
-	for (i = 0; i < 2 * m; i++) {//Êä³öA2
+	for (i = 0; i < 2 * m; i++) {//è¾“å‡ºA2
 		for (j = 0; j < 2 * m; j++) {
 			if (j == 0) printf(" | ");
 			printf("%2d ", A2[i][j]);
@@ -161,7 +161,7 @@ int OLs4Odd(int C[][N], int D[][N],int C1[][N], int m, int n) {
 		for (j = 0; j < m; j++) {
 			for (k = 0; k < n; k++) {
 				for (o = 0; o < m; o++) {
-					a = C[i][k] * 10 + D[j][o];
+					a = C[i][k] * 10 * (D[j][o] / 10 + 1) + D[j][o];
 					for (p; p < n * m;) {
 						for (q; q < n * m;) {
 							C1[p][q] = a;
@@ -184,27 +184,26 @@ int OLs4Odd(int C[][N], int D[][N],int C1[][N], int m, int n) {
 void reorder_matrix(int* C[][N], int n) {
 	int mapping[N] = { 0 };
 	int count = 0;
-	for (int i = 0; i < n; i++) {//Ê×ÏÈ±éÀú¾ØÕóAµÄµÚÒ»ĞĞ£¬½«³öÏÖ¹ıµÄÔªËØ±£´æµ½mappingÊı×éÖĞ£¬Í¬Ê±¼ÇÂ¼³öÏÖ¹ıµÄ²»Í¬ÔªËØµÄ¸öÊıcount
-		int j;
-		for (j = 0; j < count; j++) {
-			if (mapping[j] == C[0][i]) {
-				break;
-			}
-		}
-		if (j == count) {
-			mapping[count] = C[0][i];
-			count++;
-		}
+	int i, j, k;
+	for (int i = 0; i < n; i++) {//é¦–å…ˆéå†çŸ©é˜µAçš„ç¬¬ä¸€è¡Œï¼Œå°†å‡ºç°è¿‡çš„å…ƒç´ ä¿å­˜åˆ°mappingæ•°ç»„ä¸­
+		mapping[i] = C[0][i];
 	}
-	for (int i = 0; i < n; i++) {//ÔÙ´Î±éÀú¾ØÕóA£¬½«¾ØÕóAÖĞµÄÔªËØÌæ»»³É¶ÔÓ¦µÄĞÂÖµ
-		for (int j = 0; j < n; j++) {
-			for (int k = 0; k < count; k++) {
+	for (i = 0; i < n; i++) {//å†æ¬¡éå†çŸ©é˜µAï¼Œå°†çŸ©é˜µAä¸­çš„å…ƒç´ æ›¿æ¢æˆå¯¹åº”çš„æ–°å€¼
+		for (j = 0; j < n; j++) {
+			for (k = 0; k < n; k++) {
 				if (C[i][j] == mapping[k]) {
 					C[i][j] = k;
-					break;
+						break;
+					}
 				}
+
 			}
 		}
+	for (i = 0; i < n; i++) {//å¯¹é‡å¤çš„æ•°å€¼è¿›è¡Œé‡æ–°èµ‹å€¼ 
+		for (j = 0; j < n; j++) {
+			if (j > 1 && C[i][j] == C[i][j - 1])
+				C[i][j] = j;
+		}
 	}
-}
+	}
 
